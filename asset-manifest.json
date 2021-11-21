@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/newsApp/static/css/main.84ab7ad2.chunk.css",
-    "main.js": "/newsApp/static/js/main.c12295de.chunk.js",
-    "main.js.map": "/newsApp/static/js/main.c12295de.chunk.js.map",
-    "runtime-main.js": "/newsApp/static/js/runtime-main.60465a03.js",
-    "runtime-main.js.map": "/newsApp/static/js/runtime-main.60465a03.js.map",
-    "static/js/2.367bac29.chunk.js": "/newsApp/static/js/2.367bac29.chunk.js",
-    "static/js/2.367bac29.chunk.js.map": "/newsApp/static/js/2.367bac29.chunk.js.map",
-    "static/js/3.467aedad.chunk.js": "/newsApp/static/js/3.467aedad.chunk.js",
-    "static/js/3.467aedad.chunk.js.map": "/newsApp/static/js/3.467aedad.chunk.js.map",
+    "main.css": "/newsApp/static/css/main.60e3e2a2.chunk.css",
+    "main.js": "/newsApp/static/js/main.1d6e162c.chunk.js",
+    "main.js.map": "/newsApp/static/js/main.1d6e162c.chunk.js.map",
+    "runtime-main.js": "/newsApp/static/js/runtime-main.d74a9847.js",
+    "runtime-main.js.map": "/newsApp/static/js/runtime-main.d74a9847.js.map",
+    "static/js/2.a9e90d08.chunk.js": "/newsApp/static/js/2.a9e90d08.chunk.js",
+    "static/js/2.a9e90d08.chunk.js.map": "/newsApp/static/js/2.a9e90d08.chunk.js.map",
+    "static/js/3.38237773.chunk.js": "/newsApp/static/js/3.38237773.chunk.js",
+    "static/js/3.38237773.chunk.js.map": "/newsApp/static/js/3.38237773.chunk.js.map",
     "index.html": "/newsApp/index.html",
-    "static/css/main.84ab7ad2.chunk.css.map": "/newsApp/static/css/main.84ab7ad2.chunk.css.map",
-    "static/js/2.367bac29.chunk.js.LICENSE.txt": "/newsApp/static/js/2.367bac29.chunk.js.LICENSE.txt",
+    "static/css/main.60e3e2a2.chunk.css.map": "/newsApp/static/css/main.60e3e2a2.chunk.css.map",
+    "static/js/2.a9e90d08.chunk.js.LICENSE.txt": "/newsApp/static/js/2.a9e90d08.chunk.js.LICENSE.txt",
     "static/media/add_icon.a5c65f21.svg": "/newsApp/static/media/add_icon.a5c65f21.svg",
     "static/media/AddCategory.css": "/newsApp/static/media/add_icon_white.e9deab06.svg",
     "static/media/search_icon.8a477c85.svg": "/newsApp/static/media/search_icon.8a477c85.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.60465a03.js",
-    "static/js/2.367bac29.chunk.js",
-    "static/css/main.84ab7ad2.chunk.css",
-    "static/js/main.c12295de.chunk.js"
+    "static/js/runtime-main.d74a9847.js",
+    "static/js/2.a9e90d08.chunk.js",
+    "static/css/main.60e3e2a2.chunk.css",
+    "static/js/main.1d6e162c.chunk.js"
   ]
 }
