@@ -1,6 +1,11 @@
 import ReactDOM from 'react-dom';
-const Modal = ({ children }) => {
-    return ReactDOM.createPortal(children, document.getElementById('modal'))
+import './Modal.css';
+
+const Modal = ({ children, handleOutsideClick }) => {
+    return <>
+        <div className="modal-bg" onClick={handleOutsideClick}></div>
+        {ReactDOM.createPortal(children, document.getElementById('modal'))}
+    </>
 }
 
 export default Modal;

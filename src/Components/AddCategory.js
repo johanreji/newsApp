@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './AddCategory.css';
 
 const AddCategoryForm = ({ handleCategoryAddition }) => {
 
@@ -8,13 +9,12 @@ const AddCategoryForm = ({ handleCategoryAddition }) => {
         event.preventDefault();
         handleCategoryAddition(name, url)
     }
-    return <div>
+    return <div className="form-container">
+        <div className='form-header'>Add Category</div>
         <form onSubmit={handleFormSubmit}>
-            <label>Name</label>
-            <input onChange={(e) => setName(e.target.value)} />
-            <label>URL</label>
-            <input onChange={(e) => setUrl(e.target.value)} />
-            <input type="submit" />
+            <input className='form-input' placeholder="Category Name" onChange={(e) => setName(e.target.value)} />
+            <input className='form-input' placeholder="API URL" onChange={(e) => setUrl(e.target.value)} />
+            <input className='form-submit' type="submit" value="Add" />
         </form>
     </div>
 }

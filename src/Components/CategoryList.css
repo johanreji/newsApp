@@ -1,0 +1,28 @@
+.category-list{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+.category{
+    background-color: #EAEAEA;
+    border-radius: 20px;
+    opacity: 1;
+    font-weight: 600;
+    padding: 8px 14px;
+    margin: 4px 4px 4px 0;
+    color: #7E7E7E;
+    cursor: pointer;
+}
+.active{
+    background-color: #00F0C2;
+    color: #000000;
+}
+.add-button{
+    outline: none;
+    border: none;
+}
+.disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
