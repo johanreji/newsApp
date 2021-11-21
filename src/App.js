@@ -1,11 +1,6 @@
-import './App.css';
 import News from './Components/News';
 function App() {
-  return (
-    <>
-      <News />
-    </>
-  );
+  return <News />;
 }
 
 export default App;

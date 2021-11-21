@@ -1,5 +1,4 @@
 .news-item-container{
-    height: 160px;
     background-color: #FFFFFF;
     box-shadow: 0px 0px 16px #00000010;
     border: 1px solid #E5E5E5;
@@ -7,10 +6,10 @@
     padding: 24px;
     width: 100%;
     margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
 }
-.news-text{
-    width: 72%;
-}
+
 .news-header{
     color: #212121;
     font-size: 20px;
@@ -27,8 +26,20 @@
 
 .news-image{
     border-radius: 8px;
-    height: 160px;
     width: 25%;
-    float: right;
     object-fit: cover;
+    margin-left: 4px;
+}
+.info_text{
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .news-item-container{
+        flex-direction: column;
+    }
+    .news-image{
+        width: 100%;
+        margin: 4px 0;
+    }
 }
