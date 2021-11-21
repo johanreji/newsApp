@@ -14,29 +14,31 @@ const CategoryList = ({ fetchNews }) => {
     const [categories, addCategory] = useState(INITIAL_CATEGORIES);
     const [showModal, setShowModal] = useState(false);
     const [activeCategory, setActiveCategory] = useState(defaultCategory);
-    console.log('categories == ', categories)
 
     useEffect(() => {
-        let selectedCategoryData = categories.find(cat => cat.name == activeCategory);
-        fetchNews(selectedCategoryData.url)
-        console.log('useeffect')
-    }, [activeCategory, fetchNews]);
+        fetchNews(categories[0].url)
+    }, []);
 
     const handleCategoryAddition = (name, url) => {
         addCategory(prevCats => [...prevCats, { name, url }]);
         setShowModal(false);
-        setActiveCategory(name);
+        handleCategoryClick({ name, url })
+    }
+
+    const handleCategoryClick = (category) => {
+        setActiveCategory(category.name);
+        fetchNews(category.url)
     }
 
     return <div className="category-list">
         {categories.map(category =>
-            <div className={`category ${category.name == activeCategory && 'active'}`} key={category.name} onClick={() => setActiveCategory(category.name)}>{category.name}</div>
+            <div className={`category ${category.name == activeCategory && 'active'}`} key={category.name} onClick={() => handleCategoryClick(category)}>{category.name}</div>
         )}
         <button className={`category add-button ${categories.length == 5 && 'disabled'}`} onClick={() => categories.length != 5 && setShowModal(true)}>
             <img src={AddIcon} alt=""></img>
         </button>
         {showModal && <Modal handleOutsideClick={() => setShowModal(false)}>
-            <AddCategoryForm handleCategoryAddition={handleCategoryAddition} />
+            <AddCategoryForm categories={categories} handleCategoryAddition={handleCategoryAddition} />
         </Modal>}
     </div>
 }

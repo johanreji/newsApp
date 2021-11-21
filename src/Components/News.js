@@ -13,25 +13,23 @@ const News = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [filterText, setFilterText] = useState('');
 
-    const fetchNews = useCallback((url) => {
+    const fetchNews = async (url) => {
+        console.log('fetchNews')
         setIsLoading(true);
         setIsError(false);
-        fetch(url.replace('API_KEY', API_KEY))
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                if (data && data.status == 'ok' && Array.isArray(data.articles)) {
-                    setNews(data.articles);
-                    setIsError(false);
-                } else {
-                    setIsError(true);
-                }
-            })
-            .catch(() => {
+        try {
+            let response = await fetch(url.replace('API_KEY', API_KEY));
+            let data = await response.json();
+            console.log('response == ', response)
+            if (data && data.status == 'ok' && Array.isArray(data.articles)) {
+                console.log('setting news state')
+                setNews(data.articles);
+            } else {
                 setIsError(true);
-            })
+            }
+        } catch (error) { setIsError(true); };
         setIsLoading(false);
-    }, [])
+    }
 
 
     console.log('news == ', news)
