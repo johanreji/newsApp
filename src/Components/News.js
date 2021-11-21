@@ -13,30 +13,26 @@ const News = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [filterText, setFilterText] = useState('');
 
-    const fetchNews = async (url) => {
-        console.log('fetchNews')
+    const fetchNews = useCallback(async (url) => {
         setIsLoading(true);
         setIsError(false);
+        setFilterText("");
         try {
-            let response = await fetch(url.replace('API_KEY', API_KEY));
+            let response = await fetch(url + `&apiKey=${API_KEY}`);
             let data = await response.json();
-            console.log('response == ', response)
-            if (data && data.status == 'ok' && Array.isArray(data.articles)) {
-                console.log('setting news state')
+            if (data && data.status === 'ok' && Array.isArray(data.articles)) {
                 setNews(data.articles);
             } else {
                 setIsError(true);
             }
         } catch (error) { setIsError(true); };
         setIsLoading(false);
-    }
+    }, [])
 
-
-    console.log('news == ', news)
     return <div className="news-container">
         <h1>News Today </h1>
         <CategoryList fetchNews={fetchNews} />
-        <SearchBox filterData={(text) => setFilterText(text.toLowerCase())} />
+        <SearchBox filterText={filterText} filterData={(text) => setFilterText(text.toLowerCase())} />
         <NewsList isError={isError} isLoading={isLoading} newsData={news} filterText={filterText} />
     </div>
 }

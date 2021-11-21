@@ -21,7 +21,6 @@ const NewsItem = ({ data }) => {
 
 const NewsList = ({ newsData, filterText, isError, isLoading }) => {
     let filteredData = filterText ? newsData.filter(data => data.author && data.title && (data.author.toLowerCase().includes(filterText) || data.title.toLowerCase().includes(filterText))) : newsData;
-    console.log('isLoading--', isLoading)
     return <div>
         {isLoading && <div>Loading...</div>}
         {isError && !isLoading && <div>Something went wrong!</div>}

@@ -4,16 +4,16 @@ import './AddCategory.css';
 const AddCategoryForm = ({ handleCategoryAddition, categories }) => {
 
     const [name, setName] = useState('');
-    const [url, setUrl] = useState("https://newsapi.org/v2/everything?q=business&apiKey=API_KEY");
+    const [url, setUrl] = useState("");
     const [isNameError, setNameError] = useState('');
     const [isUrlError, setUrlError] = useState('');
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        if (name == "" || categories.some(category => category.name == name)) {
+        if (name === "" || categories.some(category => category.name === name)) {
             setNameError(true);
             return;
         }
-        if (url == "" || categories.some(category => category.url == url)) {
+        if (url === "" || categories.some(category => category.url === url)) {
             setUrlError(true);
             return;
         }
